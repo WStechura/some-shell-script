@@ -1,0 +1,4 @@
+---
+- name: ASD
+  set_fact:
+    somefact: somefact
