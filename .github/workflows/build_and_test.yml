@@ -1,0 +1,29 @@
+name: Build and test
+on:
+  pull_request:
+    branches: [ "main" ]
+  push:
+    branches: [ "main", "release/*" ]
+  workflow_dispatch:
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Installing dependencies
+        run: pip install ansible
+      - name: Building the collection
+        run: ansible-galaxy collection build .
+      - name: Installing the collection
+        run: ansible-galaxy collection install some-some*
+      - name: Running sanity test
+        run: pushd ~/.ansible/collections/ansible_collections/some/some && ansible-test sanity && popd
+      - uses: actions/upload-artifact@v4
+        with:
+          name: my-artifact
+          retention-days: 7
+          path: some-some*
