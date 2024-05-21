@@ -23,8 +23,10 @@ jobs:
         run: ansible-galaxy collection install some-some*
       - name: Running sanity test
         run: pushd ~/.ansible/collections/ansible_collections/some/some && ansible-test sanity && popd
+      - name: GITHUB SHA
+        run: echo ${{ github.sha }}
       - uses: actions/upload-artifact@v4
         with:
-          name: my-artifact
-          retention-days: 7
-          path: some-some*
+          name: some-some-${{ github.sha }}
+      - name: RUNRUN
+        run: ls -al
