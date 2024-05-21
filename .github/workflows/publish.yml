@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-and-test:
-    uses: ./.github/workflows/build_and.test.yml
+    uses: ./.github/workflows/build_and_test.yml
   publish:
     needs: build-and-test
     runs-on: ubuntu-latest
@@ -14,3 +14,4 @@ jobs:
       - uses: actions/checkout@v4
       - name: Run echo
         run: echo Publishing
+
