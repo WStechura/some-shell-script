@@ -21,4 +21,4 @@ jobs:
         with:
           name: some-some-${{ github.sha }}
       - name: RUNRUN
-        run: ls -al
+        run: ls -al .g
