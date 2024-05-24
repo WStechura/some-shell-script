@@ -18,7 +18,7 @@ jobs:
         run: echo ${{ github.sha }}
 #      - name: Download artifact
 #        uses: actions/download-artifact@v4
-        with:
-          name: some-some-${{ github.sha }}
+#        with:
+#          name: some-some-${{ github.sha }}
       - name: RUNRUN
         run: ls -al
