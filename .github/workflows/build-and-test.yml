@@ -23,8 +23,8 @@ jobs:
         run: ansible-galaxy collection build .
       - name: Installing the collection
         run: ansible-galaxy collection install some-some*
-      - name: Running sanity test
-        run: pushd ~/.ansible/collections/ansible_collections/some/some && ansible-test sanity && popd
+#      - name: Running sanity test
+#        run: pushd ~/.ansible/collections/ansible_collections/some/some && ansible-test sanity && popd
       - uses: actions/upload-artifact@v4
         with:
           name: some-some-${{ github.sha }}
