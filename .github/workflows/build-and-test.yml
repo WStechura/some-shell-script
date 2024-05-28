@@ -18,7 +18,7 @@ jobs:
       - name: Installing dependencies
         run: pip install ansible
       - name: Install PSUTIL
-        run: pip install psutil
+        run: pip install psutil netifaces
       - name: Building the collection
         run: ansible-galaxy collection build .
       - name: Installing the collection
