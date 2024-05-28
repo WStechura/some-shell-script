@@ -17,6 +17,8 @@ jobs:
           python-version: '3.10'
       - name: Installing dependencies
         run: pip install ansible
+      - name: Install PSUTIL
+        run: pip install psutil
       - name: Building the collection
         run: ansible-galaxy collection build .
       - name: Installing the collection
