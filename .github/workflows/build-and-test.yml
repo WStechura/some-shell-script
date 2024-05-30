@@ -24,7 +24,7 @@ jobs:
 #      - name: Install PSUTIL
 #        run: pip install psutil netifaces
       - name: Download cert
-        run: mkdir $FILES_PATH && wget https://ca.dynatrace.com/dt-root.cert.pem -P $FILES_PATH
+        run: mkdir -p $FILES_PATH && wget https://ca.dynatrace.com/dt-root.cert.pem -P $FILES_PATH
       - name: Building the collection
         run: ansible-galaxy collection build .
       - name: dddddddddd
