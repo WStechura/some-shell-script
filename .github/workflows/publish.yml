@@ -16,9 +16,9 @@ jobs:
         run: echo Publishing
       - name: GITHUB SHA
         run: echo ${{ github.sha }}
-#      - name: Download artifact
-#        uses: actions/download-artifact@v4
-#        with:
-#          name: some-some-${{ github.sha }}
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: some-some-${{ github.sha }}
       - name: RUNRUN
         run: ls -al
