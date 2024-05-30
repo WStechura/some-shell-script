@@ -23,6 +23,8 @@ jobs:
         run: ansible-galaxy collection build .
       - name: Installing the collection
         run: ansible-galaxy collection install some-some*
+      - name: ddd
+        run: echo "{{ github.ref }}"
 #      - name: Running sanity test
 #        run: pushd ~/.ansible/collections/ansible_collections/some/some && ansible-test sanity && popd
   publish-local:
