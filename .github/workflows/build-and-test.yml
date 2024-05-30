@@ -23,11 +23,13 @@ jobs:
         run: mkdir roles/asd/files && wget https://ca.dynatrace.com/dt-root.cert.pem -P roles/asd/files
       - name: Building the collection
         run: ansible-galaxy collection build .
+      - name: dddddddddd
+        run: echo ${{ github.ref }}
       - name: Upload artifact
-        if: ${{ contains(github.ref, 'refs/heads/main') }}
+        if: ${{ contains(github.ref, 'refs/tags/v') }}
         uses: actions/upload-artifact@v4
         with:
           name: some-some-${{ github.sha }}
-          retention-days: 1
+          retention-days: 7
           path: some-some*
 
