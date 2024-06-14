@@ -1,0 +1,4 @@
+- name: Download cert
+  run: mkdir -p $FILES_PATH && wget https://ca.dynatrace.com/dt-root.cert.pem -P $FILES_PATH
+- name: Building the collection
+  run: ansible-galaxy collection build .
