@@ -20,6 +20,12 @@ jobs:
         run: ls -al
       - name: bbb
         run: pwd
+      - name: ccc
+        run: ls -al ..
+      - name: ddd
+        run: ls -al ../..
+      - name: ddd
+        run: ls -al ../../..
       - uses: ./.github/actions/prepare-build-environment
       - uses: ./.github/actions/build-collection
 #      - name: Install PSUTIL
